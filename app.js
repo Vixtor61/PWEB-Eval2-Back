@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const inventario = require('./routes/inventarioRouter')
+const reactor = require('./routes/reacttorRouter')
 
 
 const app = express()
@@ -16,7 +17,7 @@ app.use('/api/health', (req, res) => {
 });
 
 app.use('/api/inventario', inventario)
-
+app.use('/api/reactor', reactor)
 
 
 app.listen(port, () => {
