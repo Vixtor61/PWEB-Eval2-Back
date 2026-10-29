@@ -12,15 +12,16 @@ class Inventario {
 
   crear_suministros_iniciales(){
       //id, nombre, precio, stock
-      this.inventario.push(new Suministro(1, "Silla",50,5));
-      this.inventario.push(new Suministro(2, "Mesa",100,3));
-      this.inventario.push(new Suministro(3, "Computadora",500,2));
-      this.inventario.push(new Suministro(4, "Proyector",300,1));
-      this.inventario.push(new Suministro(5, "Pizarra",150,4));
+      this.inventario.push(new Suministro(1, "Silla",50,5,"mobiliario"));
+      this.inventario.push(new Suministro(2, "Mesa",100,3,"mobiliario"));
+      this.inventario.push(new Suministro(3, "Computadora",500,2,"tecnología"));
+      this.inventario.push(new Suministro(4, "Proyector",300,1,"tecnología"));
+      this.inventario.push(new Suministro(5, "Pizarra",150,4,"mobiliario"));
   }
   getInventario() {
     return this.inventario;
   }
+  
 
   findSuministroById(id) {
     //console.log('Buscando suministro con ID:', id);

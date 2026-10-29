@@ -7,13 +7,15 @@ class Suministro {
   precio;
   stock;
   reserva;
+  categoria;
   // Métodos
   
-  constructor(id,nombre,precio,stock) {
+  constructor(id,nombre,precio,stock,categoria) {
     this.id = id;
     this.nombre = nombre
     this.precio = precio
     this.stock = stock   
+    this.categoria = categoria
     this.reserva = 0
   }
 
@@ -26,13 +28,24 @@ class Suministro {
     }
   }
 
-  getStockDisponible() {
+  get stockDisponible() {
     return this.stock - this.reserva;
   }
 
 
   restarreservaastock(){
     this.stock = this.stock - this.reserva 
+  }
+  toJSON(){
+    return {
+      id: this.id,
+      nombre: this.nombre,
+      precio: this.precio,
+      stock: this.stock,
+      reserva: this.reserva,
+      categoria: this.categoria,
+      stockDisponible: this.stockDisponible
+    };
   }
 }
 
